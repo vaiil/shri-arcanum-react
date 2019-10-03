@@ -1,3 +1,8 @@
+import Container from 'components/Base/Container/Container'
 export default () => (
-  <div>1</div>
+  <div>
+    <Container type="centered">
+      2
+    </Container>
+  </div>
 )
