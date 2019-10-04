@@ -1,0 +1,28 @@
+.Theme {
+    --color_black: #000;
+
+    --color_grey-0: #FAFBFC;
+    --color_grey-50: #F0F2F3;
+    --color_grey-100: #E5E5E5;
+    --color_grey-200: #CCCCCC;
+    --color_grey-300: #979797;
+    --color_grey-400: #7F8285;
+
+    --color_blue-300: #1774E9;
+
+    --color_red: #FF4F49;
+
+    --space_xs: 6px;
+    --space_s: 8px;
+    --space_m: 16px;
+    --space_l: 20px;
+    --space_xl: 24px;
+    --space_xxl: 32px;
+
+    --color_layout-separator: var(--color_grey-50);
+    --color_inner-separator: var(--color_grey-100);
+    --color_link: var(--color_blue-300);
+    --color_highlighted: var(--color_red);
+
+    font-family: 'YS Text', sans-serif;
+}
