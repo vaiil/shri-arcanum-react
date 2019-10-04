@@ -5,6 +5,9 @@ import Logo from 'components/Base/Logo/Logo'
 const cnHeader = cn('Header')
 export default ({ className }) => (
   <header className={cnHeader(null, [className])}>
-    <Link className={cnHeader('Logo')}><Logo/></Link>
+    <Link
+      href={'/'}>
+      <Logo/>
+    </Link>
   </header>
 )

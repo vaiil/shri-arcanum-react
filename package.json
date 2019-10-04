@@ -10,6 +10,8 @@
   "dependencies": {
     "@bem-react/classname": "^1.5.6",
     "@bem-react/core": "^2.0.6",
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
     "next": "9.0.7",
     "react": "16.10.1",
     "react-dom": "16.10.1"

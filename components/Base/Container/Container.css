@@ -1,0 +1,6 @@
+.Container {
+    box-sizing: border-box;
+
+    padding-right: var(--container_hspace);
+    padding-left: var(--container_hspace);
+}

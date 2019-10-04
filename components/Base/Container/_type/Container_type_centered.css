@@ -1,0 +1,6 @@
+.Container_type_centered {
+    max-width: 1440px;
+    margin-right: auto;
+    margin-left: auto;
+    --container_hspace: var(--space_xxl);
+}
