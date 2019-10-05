@@ -1,0 +1,4 @@
+.Footer {
+    color: var(--color_grey-300);
+    border-top: solid 1px var(--color_layout-separator);
+}
