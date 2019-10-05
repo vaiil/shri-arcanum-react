@@ -1,0 +1,7 @@
+.List_indentV_m .List-Item {
+    margin-top: var(--space_m);
+}
+
+.List_indentV_m .List-Item:first-child {
+    margin-top: 0;
+}

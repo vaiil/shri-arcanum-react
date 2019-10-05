@@ -1,0 +1,7 @@
+.Breadcrumbs {
+    display: flex;
+    align-items: center;
+    padding-top: var(--space_s);
+    padding-bottom: var(--space_s);
+    border-bottom: solid 1px var(--color_inner-separator);
+}

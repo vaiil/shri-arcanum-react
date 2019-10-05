@@ -1,0 +1,7 @@
+.Header-Item {
+    margin-left: var(--space_xxxl);
+}
+
+.Header-Item:first-child {
+    margin-left: 0;
+}

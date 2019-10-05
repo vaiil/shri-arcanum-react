@@ -1,0 +1,5 @@
+.Dropdown {
+    position: absolute;
+    background: white;
+    box-shadow: 0 4px 16px rgba(53, 73, 93, 0.2);
+}

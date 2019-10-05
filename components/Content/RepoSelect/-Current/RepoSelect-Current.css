@@ -1,0 +1,6 @@
+.RepoSelect-Current {
+    padding-top: var(--space_m);
+    padding-bottom: var(--space_m);
+    border-bottom: solid 3px var(--color_highlighted);
+    cursor: pointer;
+}

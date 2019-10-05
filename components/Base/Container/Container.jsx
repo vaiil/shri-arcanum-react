@@ -1,18 +1,8 @@
-import { cn } from '@bem-react/classname'
-import { compose } from '@bem-react/core'
-import { ContainerTypeCentered } from './_type/Container_type_centered'
-import { ContainerTypeFluid } from './_type/Container_type_fluid'
 import './Container.css'
+import { cnContainer } from './index'
 
-const cnContainer = cn('Container')
-
-const Container = ({ className, children }) => (
+export default ({ className, children }) => (
   <div className={cnContainer(null, [className])}>
     {children}
   </div>
 )
-
-export default compose(
-  ContainerTypeCentered,
-  ContainerTypeFluid
-)(Container)

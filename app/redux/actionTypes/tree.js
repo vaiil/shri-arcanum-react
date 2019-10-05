@@ -1,0 +1,5 @@
+export const GET_TREE_REQUEST = 'GET_TREE_REQUEST'
+
+export const GET_TREE_SUCCESS = 'GET_TREE_SUCCESS'
+
+export const GET_TREE_FAILURE = 'GET_TREE_FAILURE'

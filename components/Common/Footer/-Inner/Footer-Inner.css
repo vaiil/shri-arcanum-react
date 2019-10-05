@@ -1,0 +1,6 @@
+.Footer-Inner {
+    display: flex;
+    align-items: center;
+    padding-top: var(--space_m);
+    padding-bottom: var(--space_m);
+}
