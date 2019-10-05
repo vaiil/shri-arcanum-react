@@ -7,7 +7,7 @@ export default ({ href, as, children, active }) => (
     ?
     <Link
       href={href}
-      as={as}
+      as={as}><a
       className={
         cnBreadcrumbs('' +
           'Link',
@@ -15,7 +15,7 @@ export default ({ href, as, children, active }) => (
             cnText({ view: 'secondary' })
           ]
         )
-      }><a>{children}</a></Link>
+      }>{children}</a></Link>
     :
     <span className={
       cnBreadcrumbs('' +
