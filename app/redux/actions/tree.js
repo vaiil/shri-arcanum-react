@@ -29,7 +29,6 @@ export function fetchTree ({ repoName, path = '', branch = 'master' }) {
 
     dispatch(requestTree())
 
-    console.log(`http://localhost:3003/api/repos/${repoName}/tree/${branch}/${path}`)
     return fetch(`http://localhost:3003/api/repos/${repoName}/tree/${branch}/${path}`)
       .then(response => {
         const data = response.json()

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { cnText } from '../../../Base/Text'
 import { cnBreadcrumbs } from '../index'
+import './Breadcrumbs-Link.css'
 
 export default ({ href, as, children, active }) => (
   !active

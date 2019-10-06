@@ -1,0 +1,9 @@
+.Breadcrumbs-Link:after {
+    content: '/';
+    margin-left: var(--space_m);
+    margin-right: var(--space_m);
+}
+
+.Breadcrumbs-Link:last-child:after {
+    display: none;
+}

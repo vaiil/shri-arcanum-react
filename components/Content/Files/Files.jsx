@@ -28,7 +28,11 @@ export default function Files () {
         {
           files.map(file => (
             <div key={file.path}>
-              {file.name}
+              <Link
+                href="/repos/[repoName]/blob/[branch]/[path*]"
+                as={`/repos/${repoName}/blob/${branch}/${file.path}`}>
+                <a>{file.name}</a>
+              </Link>
             </div>
           ))
         }
