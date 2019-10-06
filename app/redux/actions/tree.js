@@ -32,16 +32,17 @@ export function fetchTree ({ repoName, path = '', branch = 'master' }) {
     return fetch(`http://localhost:3003/api/repos/${repoName}/tree/${branch}/${path}`)
       .then(response => {
         const data = response.json()
-        if (response.status === 200) {
+        return data.then(data => {
+          if (response.status !== 200) {
+            return Promise.reject(data.message || 'Error')
+          }
           return data
-        }
-        throw data
+        })
       })
       .then(tree => {
         dispatch(receiveTree(path, tree))
       })
       .catch(reason => {
-        console.log(reason)
         dispatch(rejectTree(path, reason))
       })
   }

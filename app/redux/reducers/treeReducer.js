@@ -9,7 +9,7 @@ export default (state = [], action) => {
     case GET_TREE_REQUEST:
       return { currentPath: action.path, files: [], dirs: [], loading: true }
     case GET_TREE_FAILURE:
-      return { currentPath: action.path, error: action.reason }
+      return { currentPath: action.path, error: action.reason, files: [], dirs: [] }
     default:
       return state
   }

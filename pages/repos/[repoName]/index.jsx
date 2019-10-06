@@ -4,14 +4,14 @@ import { fetchRepos, selectRepo } from 'app/redux/actions/repo'
 import { fetchTree } from 'app/redux/actions/tree'
 
 import Breadcrumbs from '../../../components/Common/Breadcrumbs/Breadcrumbs'
-import Files from '../../../components/Content/Files/Files'
+import Tree from '../../../components/Content/Tree/Tree'
 import { withRouter } from 'next/router'
 
 const Repo = ({ repoName }) => {
   return (
-    <Layout title='Repo'>
+    <Layout title={repoName}>
       <Breadcrumbs/>
-      <Files/>
+      <Tree/>
     </Layout>
   )
 }

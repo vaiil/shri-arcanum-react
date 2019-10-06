@@ -1,0 +1,12 @@
+.Table-Cell {
+    display: table-cell;
+    padding-top: var(--space_m);
+    padding-right: var(--space_m);
+    padding-bottom: var(--space_s);
+    border-bottom: solid 1px var(--color_table-separator);
+}
+
+.Table-Cell:last-child {
+    text-align: right;
+    padding-right: 0;
+}

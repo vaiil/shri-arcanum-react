@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'icomoon';
+    src:
+            url('fonts/icomoon.ttf?ivrttc') format('truetype'),
+            url('fonts/icomoon.woff?ivrttc') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+.Icon {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    /*noinspection CssNoGenericFontName*/
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.Icon_type_objects:before {
+    content: "\e900";
+}
+.Icon_type_chevronLeft:before {
+    content: "\e90d";
+}
+.Icon_type_externalLink:before {
+    content: "\e90a";
+}
+.Icon_type_sortUp:before {
+    content: "\e90b";
+}
+.Icon_type_sortDown:before {
+    content: "\e90c";
+}
+.Icon_type_chevronRight:before {
+    content: "\e908";
+}
+.Icon_type_bars:before {
+    content: "\e909";
+}
+.Icon_type_download:before {
+    content: "\e905";
+}
+.Icon_type_codeBranch:before {
+    content: "\e906";
+}
+.Icon_type_code:before {
+    content: "\e907";
+}
+.Icon_type_folder:before {
+    content: "\e901";
+}
+.Icon_type_angleDown:before {
+    content: "\e902";
+}
+.Icon_type_fileText:before {
+    content: "\e903";
+}
+.Icon_type_fileCode:before {
+    content: "\e904";
+}

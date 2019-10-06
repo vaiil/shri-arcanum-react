@@ -4,19 +4,19 @@ import { fetchRepos, selectRepo } from 'app/redux/actions/repo'
 import { fetchTree } from 'app/redux/actions/tree'
 
 import Breadcrumbs from 'components/Common/Breadcrumbs/Breadcrumbs'
-import Files from 'components/Content/Files/Files'
+import { Tree } from 'components/Content/Tree'
 import { withRouter } from 'next/router'
 
-const Tree = ({ repoName }) => {
+const TreePage = ({ repoName }) => {
   return (
-    <Layout title='Files'>
+    <Layout title={repoName}>
       <Breadcrumbs/>
-      <Files/>
+      <Tree/>
     </Layout>
   )
 }
 
-Tree.getInitialProps = async ({ reduxStore, query: { repoName, branch, path } }) => {
+TreePage.getInitialProps = async ({ reduxStore, query: { repoName, branch, path } }) => {
   const { dispatch } = reduxStore
   await dispatch(fetchRepos())
   await dispatch(selectRepo(repoName))
@@ -25,4 +25,4 @@ Tree.getInitialProps = async ({ reduxStore, query: { repoName, branch, path } })
   return { repoName }
 }
 
-export default withRouter(withRedux(Tree))
+export default withRouter(withRedux(TreePage))

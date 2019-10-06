@@ -1,5 +1,5 @@
 import { cnBreadcrumbs } from '../index'
-import { cnText } from '../../../Base/Text'
+import { cnText } from 'components/Base/Text'
 
 export default () => (
   <div className={

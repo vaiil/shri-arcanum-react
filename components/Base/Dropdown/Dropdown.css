@@ -1,5 +1,10 @@
 .Dropdown {
     position: absolute;
+    display: none;
     background: white;
     box-shadow: 0 4px 16px rgba(53, 73, 93, 0.2);
+}
+
+.Dropdown_isOpen {
+    display: block;
 }

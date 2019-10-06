@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { cnText } from '../../../Base/Text'
+import { cnText } from 'components/Base/Text'
 import { cnBreadcrumbs } from '../index'
 import './Breadcrumbs-Link.css'
 

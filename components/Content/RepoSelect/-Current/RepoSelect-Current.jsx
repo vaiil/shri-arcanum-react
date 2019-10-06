@@ -1,5 +1,5 @@
 import { cnRepoSelect } from '../index'
-import { Text } from '../../../Base/Text'
+import { Text } from 'components/Base/Text'
 import './RepoSelect-Current.css'
 
 export default ({ current, onClick }) => (

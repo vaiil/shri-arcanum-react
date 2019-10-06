@@ -13,7 +13,8 @@
 
     --color_red: #FF4F49;
 
-    --space_xs: 6px;
+    --space_xxs: 6px;
+    --space_xs: 8px;
     --space_s: 11px;
     --space_m: 16px;
     --space_l: 20px;
@@ -23,6 +24,7 @@
 
     --color_layout-separator: var(--color_grey-50);
     --color_inner-separator: var(--color_grey-100);
+    --color_table-separator: var(--color_grey-50);
 
     --color_highlighted: var(--color_red);
 
@@ -34,6 +36,18 @@
 
     --dropdown_width_small: 266px;
     --dropdown_width_medium: 320px;
+
+
+    --text-size_xs: 12px;
+    --text-size_s: 13px;
+    --text-size_m: 14px;
+    --text-size_l: 16px;
+
+    /* Межстрочный интервал */
+    --text-line-height_xs: 1.2em;
+    --text-line-height_s: 1.3em;
+    --text-line-height_m: 1.4em;
+    --text-line-height_l: 1.6em;
 
     font-family: 'YS Text', sans-serif;
 }

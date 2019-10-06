@@ -1,6 +1,6 @@
 import { cnLayout } from '../index'
 import './Layout-Content.css'
-import { Container } from '../../../Base/Container'
+import { Container } from 'components/Base/Container'
 
 export default ({ children }) => (
   <div className={cnLayout('Content')}>

@@ -1,4 +1,4 @@
-import { Container } from '../../../Base/Container'
+import { Container } from 'components/Base/Container'
 import { cn } from '@bem-react/classname'
 import './Footer-Inner.css'
 

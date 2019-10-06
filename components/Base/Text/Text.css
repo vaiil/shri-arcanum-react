@@ -1,3 +1,6 @@
 .Text {
     text-decoration: none;
+    color: var(--color_typo_primary);
+    font-size: var(--text-size_m);
+    line-height: var(--text-line-height_m);
 }

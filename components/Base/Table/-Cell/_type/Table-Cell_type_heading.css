@@ -1,0 +1,4 @@
+.Table-Cell_type_heading {
+    padding-bottom: var(--space_xs);
+    border-bottom: var(--color_inner-separator) solid 1px;
+}

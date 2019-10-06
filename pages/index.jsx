@@ -3,13 +3,11 @@ import { withRedux } from '../app/redux/withRedux'
 import { fetchRepos } from '../app/redux/actions/repo'
 
 const Home = () => (
-  <Layout title='Index page'>
-    <div></div>
-  </Layout>
+  <Layout title='Index page'/>
 )
 
 Home.getInitialProps = async ({ reduxStore }) => {
-  const { dispatch, getState } = reduxStore
+  const { dispatch } = reduxStore
   await dispatch(fetchRepos())
 }
 
