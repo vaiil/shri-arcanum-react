@@ -3,7 +3,7 @@ const withCSS = require('@zeit/next-css')
 const withSass = require('@zeit/next-sass')
 const withFonts = require('next-fonts')
 require('dotenv').config()
-const webpack = require('webpack')
+const Dotenv = require('dotenv-webpack')
 
 module.exports = withFonts(
   withCSS(
@@ -12,19 +12,16 @@ module.exports = withFonts(
           config.resolve.alias['components'] = path.join(__dirname, 'components')
           config.resolve.alias['app'] = path.join(__dirname, 'app')
 
-          /**
-           * Returns environment variables as an object
-           */
-          const env = Object.keys(process.env).reduce((acc, curr) => {
-            acc[`process.env.${curr}`] = JSON.stringify(process.env[curr])
-            return acc
-          }, {})
+          config.plugins = config.plugins || []
+          config.plugins = [
+            ...config.plugins,
 
-          /** Allows you to create global constants which can be configured
-           * at compile time, which in our case is our environment variables
-           */
-          config.plugins.push(new webpack.DefinePlugin(env))
-
+            // Read the .env file
+            new Dotenv({
+              path: path.join(__dirname, '.env'),
+              systemvars: true
+            })
+          ]
           return config
         }
       }
