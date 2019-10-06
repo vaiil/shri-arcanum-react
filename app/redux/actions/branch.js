@@ -1,5 +1,6 @@
 import fetch from 'isomorphic-unfetch'
 import { GET_BRANCHES_FAILURE, GET_BRANCHES_REQUEST, GET_BRANCHES_SUCCESS, SELECT_BRANCH } from '../actionTypes/branch'
+import { baseApiUrl } from '../../api/urls'
 
 function requestBranches () {
   return {
@@ -33,7 +34,7 @@ export function fetchBranches () {
 
     dispatch(requestBranches())
 
-    return fetch(`http://localhost:3003/api/repos`)
+    return fetch(`${baseApiUrl}/api/repos`)
       .then(response => response.json())
       .then(repos => {
           dispatch(receiveBranches(repos))

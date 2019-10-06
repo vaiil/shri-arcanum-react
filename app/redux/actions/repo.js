@@ -1,5 +1,6 @@
 import fetch from 'isomorphic-unfetch'
 import { GET_REPOS_REQUEST, GET_REPOS_FAILURE, GET_REPOS_SUCCESS, SELECT_REPO } from '../actionTypes/repo'
+import {baseApiUrl} from '../../api/urls'
 
 function requestRepos () {
   return {
@@ -33,7 +34,7 @@ export function fetchRepos () {
 
     dispatch(requestRepos())
 
-    return fetch(`http://localhost:3003/api/repos`)
+    return fetch(`${baseApiUrl}/api/repos`)
       .then(response => response.json())
       .then(repos => {
           dispatch(receiveRepos(repos))

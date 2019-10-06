@@ -1,5 +1,6 @@
 import fetch from 'isomorphic-unfetch'
 import { GET_TREE_FAILURE, GET_TREE_REQUEST, GET_TREE_SUCCESS } from '../actionTypes/tree'
+import { baseApiUrl } from '../../api/urls'
 
 function requestTree (path) {
   return {
@@ -29,7 +30,7 @@ export function fetchTree ({ repoName, path = '', branch = 'master' }) {
 
     dispatch(requestTree())
 
-    return fetch(`http://localhost:3003/api/repos/${repoName}/tree/${branch}/${path}`)
+    return fetch(`${baseApiUrl}/api/repos/${repoName}/tree/${branch}/${path}`)
       .then(response => {
         const data = response.json()
         return data.then(data => {
