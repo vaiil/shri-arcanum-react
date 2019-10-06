@@ -14,7 +14,7 @@
     "@zeit/next-sass": "^1.0.1",
     "isomorphic-unfetch": "^3.0.0",
     "moment": "^2.24.0",
-    "next": "file:../next.js/packages/next",
+    "next": "https://github.com/vaiil/next-js-catch-all.git",
     "next-fonts": "^0.19.0",
     "react": "16.10.1",
     "react-dom": "16.10.1",
