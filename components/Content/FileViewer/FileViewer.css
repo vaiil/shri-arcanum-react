@@ -1,0 +1,6 @@
+.FileViewer {
+    margin: var(--space_m) 0;
+    overflow: hidden;
+    border: 1px solid var(--color_inner-separator);
+    border-radius: var(--radius_default);
+}

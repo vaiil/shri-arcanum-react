@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Mono&display=swap');
+
+.HighlightedCode {
+    font-size: var(--text-size_xs);
+    font-family: 'PT Mono', monospace;
+    line-height: var(--text-line-height_xl);
+}
+
+.HighlightedCode .react-syntax-highlighter-line-number {
+    display: block;
+    padding-left: var(--space_xxs);
+    padding-right: var(--space_l);
+    text-align: right;
+}

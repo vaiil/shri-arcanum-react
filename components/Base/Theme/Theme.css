@@ -1,7 +1,7 @@
 .Theme {
     --color_black: #000;
 
-    --color_grey-0: #FAFBFC;
+    --color_grey-0: #F5F5F5;
     --color_grey-50: #F0F2F3;
     --color_grey-100: #E5E5E5;
     --color_grey-150: #B8BEC3;
@@ -25,6 +25,7 @@
     --color_layout-separator: var(--color_grey-50);
     --color_inner-separator: var(--color_grey-100);
     --color_table-separator: var(--color_grey-50);
+    --color_info-bar: var(--color_grey-0);
 
     --color_highlighted: var(--color_red);
 
@@ -37,6 +38,7 @@
     --dropdown_width_small: 266px;
     --dropdown_width_medium: 320px;
 
+    --radius_default: 4px;
 
     --text-size_xs: 12px;
     --text-size_s: 13px;
@@ -44,10 +46,11 @@
     --text-size_l: 16px;
 
     /* Межстрочный интервал */
-    --text-line-height_xs: 1.2em;
-    --text-line-height_s: 1.3em;
-    --text-line-height_m: 1.4em;
-    --text-line-height_l: 1.6em;
+    --text-line-height_xs: 1.2;
+    --text-line-height_s: 1.3;
+    --text-line-height_m: 1.4;
+    --text-line-height_l: 1.6;
+    --text-line-height_xl: 1.7;
 
     font-family: 'YS Text', sans-serif;
 }

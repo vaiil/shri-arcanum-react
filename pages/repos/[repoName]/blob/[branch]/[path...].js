@@ -4,16 +4,21 @@ import { fetchRepos, selectRepo } from 'app/redux/actions/repo'
 import { fetchTree } from 'app/redux/actions/tree'
 
 import { Breadcrumbs } from 'components/Common/Breadcrumbs'
-import { Blob } from 'components/Content/Blob'
+import {FileViewer} from 'components/Content/FileViewer'
+import {HighlightedCode} from 'components/Content/HighlightedCode'
+
+
 import { withRouter } from 'next/router'
 import fetch from 'isomorphic-unfetch'
-import { baseApiUrl } from '../../../../../app/api/urls'
+import { baseApiUrl } from 'app/api/urls'
 
 const BlobPage = ({ path, blob }) => {
   return (
     <Layout title={path}>
       <Breadcrumbs/>
-      <Blob blob={blob}/>
+      <FileViewer name={path} size={blob.length}>
+        <HighlightedCode code={blob} />
+      </FileViewer>
     </Layout>
   )
 }
