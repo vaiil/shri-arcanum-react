@@ -4732,8 +4732,8 @@ next-fonts@^0.19.0:
     url-loader "^1.1.1"
 
 "next@https://github.com/vaiil/next-js-catch-all.git":
-  version "9.0.9-canary.1-with-catch-all"
-  resolved "https://github.com/vaiil/next-js-catch-all.git#9aeeebcbe69654ecea469bf26cdad82103c61b4c"
+  version "9.0.9-canary.2-with-catch-all"
+  resolved "https://github.com/vaiil/next-js-catch-all.git#13474ab42706f2a2ecad494dced34a112e7be7ff"
   dependencies:
     "@ampproject/toolbox-optimizer" "1.0.1"
     "@babel/core" "7.4.5"
