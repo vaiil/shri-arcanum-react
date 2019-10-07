@@ -13,7 +13,7 @@ import IconPlusBlock from '../../../Base/IconPlus/-Block/IconPlus-Block'
 export default ({ path, name, type, commitHash, commitSubject, timestamp, committer }) => {
   const repoName = useSelector(state => state.repo.current)
   const branch = 'master'
-  const href = `/repos/[repoName]/${type === 'dir' ? 'tree' : 'blob'}/[branch]/[path*]`
+  const href = `/repos/[repoName]/${type === 'dir' ? 'tree' : 'blob'}/[branch]/[path...]`
   const as = `/repos/${repoName}/${type === 'dir' ? 'tree' : 'blob'}/${branch}/${path}`
   return (
     <TableRow>
