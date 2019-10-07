@@ -11,8 +11,8 @@ npm --prefix ./api i --production
 node ./api/server.js --path=. --port 3007 &
 cd front
 npm i --production
-npm run build
 echo 'API_URL=http://localhost:3007' > .env
+npm run build
 npm run start -- --port 3008 
 ``` 
 
