@@ -1,3 +1,23 @@
+# Тестирование
+Чтобы запустить фронт хорошо бы иметь yarn, так как тут yarn.lock
+Установка и запуск для тестирования (с dev зависимостями):
+
+```shell script
+mkdir "vail" 
+cd vail
+git clone https://github.com/vaiil/shri-git-wrapper.git api
+git clone https://github.com/vaiil/shri-arcanum-react.git front
+npm --prefix ./api i
+node ./api/server.js --path=. --port 3007 &
+cd front
+yarn
+echo 'API_URL=http://localhost:3007' > .env
+yarn build
+yarn start -- --port 3008 
+``` 
+
+__Важно:__ Процесс сервера запустится в фоне, не забудьте его вынуть (`fg`) и прикончить.
+
 # Arcanum react
 
 Для запуска (создаст папку, в нее скачает два проекта): 
@@ -10,10 +30,10 @@ git clone https://github.com/vaiil/shri-arcanum-react.git front
 npm --prefix ./api i --production
 node ./api/server.js --path=. --port 3007 &
 cd front
-npm i --production
+yarn --production
 echo 'API_URL=http://localhost:3007' > .env
-npm run build
-npm run start -- --port 3008 
+yarn build
+yarn start -- --port 3008 
 ``` 
 
 И откройте http://localhost:3008/repos/front
@@ -30,3 +50,4 @@ __Важно:__ Процесс сервера запустится в фоне, 
 Также есть некоторые баги, которые пока не смог поправить:
 * В production моде при серверном рендеринге на главной не работают ссылки в dropdown-е. 
 На других страницах работают, при переходе JS на главную также работают. 
+
