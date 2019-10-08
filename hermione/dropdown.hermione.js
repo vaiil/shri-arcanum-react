@@ -25,7 +25,7 @@ describe('Список репозиториев ', () => {
           .click('.RepoSelect-Items a')
           .waitUntil(async function () {
             return await this.getUrl() === await this.$('.RepoSelect-Items a').getAttribute('href')
-          }, 5000, 'Не успешный переход по ссылке')
+          }, 500, 'Не успешный переход по ссылке')
       })
       it('После перехода dropdown закрыт', async function () {
         const visible = await this.browser.url(url)
@@ -33,10 +33,31 @@ describe('Список репозиториев ', () => {
           .click('.RepoSelect-Items a')
           .waitUntil(async function () {
             return await this.getUrl() !== await this.getAttribute('.RepoSelect-Items a', 'href')
-          }, 5000, 'Успешный переход по ссылке')
+          }, 500, 'Не успешный переход по ссылке')
           .isVisible('.RepoSelect-Items')
         assert.ok(!visible, 'Dropdown остался открытым')
       })
+    })
+  })
+
+  describe('Внешний вид выпадающего списка', () => {
+    it('Когда не выбран', async function () {
+      await this.browser.url('/')
+        .assertView('not_chosen_hidden', '.RepoSelect')
+    })
+    it('Когда не выбран и открыт', async function () {
+      await this.browser.url('/')
+        .click('.RepoSelect-Current')
+        .assertView('not_chosen_shown', '.RepoSelect-Items')
+    })
+    it('Когда выбран', async function () {
+      await this.browser.url('/repos/front')
+        .assertView('not_chosen_hidden', '.RepoSelect')
+    })
+    it('Когда выбран и открыт', async function () {
+      await this.browser.url('/repos/front')
+        .click('.RepoSelect-Current')
+        .assertView('not_chosen_shown', '.RepoSelect-Items')
     })
   })
 })
