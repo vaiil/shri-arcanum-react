@@ -25,3 +25,4 @@ yarn-debug.log*
 yarn-error.log*
 /.idea/php.xml
 /.idea/deployment.xml
+/.idea/jsLibraryMappings.xml
