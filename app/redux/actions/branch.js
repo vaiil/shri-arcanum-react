@@ -22,27 +22,9 @@ function rejectBranches (reason) {
   }
 }
 
-export function selectBranch (repo) {
+export function selectBranch (branch) {
   return {
     type: SELECT_BRANCH,
-    repo
-  }
-}
-
-export function fetchBranches () {
-  return function (dispatch) {
-
-    dispatch(requestBranches())
-
-    return fetch(`${baseApiUrl}/api/repos`)
-      .then(response => response.json())
-      .then(repos => {
-          dispatch(receiveBranches(repos))
-        },
-        reason => {
-          dispatch(rejectBranches(reason))
-        }
-      )
-
+    branch
   }
 }

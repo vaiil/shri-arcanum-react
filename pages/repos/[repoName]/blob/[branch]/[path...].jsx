@@ -23,9 +23,11 @@ const BlobPage = ({ path, blob }) => {
   )
 }
 
-BlobPage.getInitialProps = async ({ reduxStore, query: { repoName, branch, path } }) => {
+BlobPage.getInitialProps = async ({ reduxStore, query: { repoName, branch, path }, req }) => {
   const { dispatch } = reduxStore
-  await dispatch(fetchRepos())
+  if (req) {
+    await dispatch(fetchRepos())
+  }
   await dispatch(selectRepo(repoName))
   await dispatch(fetchTree({ repoName, branch, path }))
 
