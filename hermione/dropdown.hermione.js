@@ -25,7 +25,7 @@ describe('Список репозиториев ', () => {
           .click('.RepoSelect-Items a')
           .waitUntil(async function () {
             return await this.getUrl() === await this.$('.RepoSelect-Items a').getAttribute('href')
-          }, 500, 'Не успешный переход по ссылке')
+          }, 1500, 'Не успешный переход по ссылке')
       })
       it('После перехода dropdown закрыт', async function () {
         const visible = await this.browser.url(url)
@@ -33,7 +33,7 @@ describe('Список репозиториев ', () => {
           .click('.RepoSelect-Items a')
           .waitUntil(async function () {
             return await this.getUrl() !== await this.getAttribute('.RepoSelect-Items a', 'href')
-          }, 500, 'Не успешный переход по ссылке')
+          }, 1500, 'Не успешный переход по ссылке')
           .isVisible('.RepoSelect-Items')
         assert.ok(!visible, 'Dropdown остался открытым')
       })
