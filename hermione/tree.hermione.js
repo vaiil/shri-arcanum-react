@@ -5,7 +5,8 @@ describe('Список файлов', () => {
   [
     '/repos/front',
     '/repos/front/tree/9810b0a1af05464258e4a9629baaece667470b49',
-    '/repos/front/tree/9810b0a1af05464258e4a9629baaece667470b49/app/redux/actionTypes'
+    '/repos/front/tree/9810b0a1af05464258e4a9629baaece667470b49/app/redux/actionTypes',
+    '/repos/front/tree/9810b0a1af05464258e4a9629baaece667470b49/.idea'
   ]
     .forEach((url) => {
       describe(`присутствует`, () => {
