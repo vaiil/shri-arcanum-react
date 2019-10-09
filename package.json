@@ -14,7 +14,6 @@
     "@zeit/next-sass": "^1.0.1",
     "dotenv": "^8.1.0",
     "dotenv-webpack": "^1.7.0",
-    "html-reporter": "^5.0.0",
     "isomorphic-unfetch": "^3.0.0",
     "moment": "^2.24.0",
     "next": "https://github.com/vaiil/next-js-catch-all.git",
@@ -28,6 +27,7 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "hermione": "^2.12.6"
+    "hermione": "^2.12.6",
+    "html-reporter": "^5.0.0"
   }
 }
