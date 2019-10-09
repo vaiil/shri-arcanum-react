@@ -8,7 +8,7 @@ describe('Список файлов', () => {
     '/repos/front/tree/9810b0a1af05464258e4a9629baaece667470b49/app/redux/actionTypes'
   ]
     .forEach((url) => {
-      describe(`Присутствует`, () => {
+      describe(`присутствует`, () => {
         it(`На странице ${url}`, async function () {
           assert.ok(await this.browser.url(url).isExisting('.Tree'))
         })
@@ -21,7 +21,7 @@ describe('Список файлов', () => {
     ['/repos/front/tree/9810b0a1af05464258e4a9629baaece667470b49/app/redux/actionTypes', 'folder']
   ])
     .forEach((fileName, url) => {
-      describe(`Отрисован корректно`, () => {
+      describe(`отрисован корректно`, () => {
         it(`на странице ${url}`, async function () {
           await this.browser.url(url).assertView('tree_' + fileName, '.Tree')
         })
@@ -33,7 +33,7 @@ describe('Список файлов', () => {
     ['/repos/front/tree/9810b0a1af05464258e4a9629baaece667470b49/app/redux/actionTypes', '/repos/front/blob/9810b0a1af05464258e4a9629baaece667470b49/app/redux/actionTypes/branch.js']
   ])
     .forEach((resultUrl, url) => {
-      describe(`Переход по 1ому элементу выполнен`, () => {
+      describe(`переход по 1ому элементу выполнен`, () => {
         it(`на странице ${url}`, async function () {
           await this.browser.url(url).click('.Tree a').waitUntil(async function () {
             return urlParse(await this.getUrl()).path !== resultUrl

@@ -4,7 +4,7 @@ describe('Просмотр файла', () => {
     ['http://localhost:3008/repos/front/blob/9810b0a1af05464258e4a9629baaece667470b49/app/redux/store.js', 'store']
   ])
     .forEach((fileName, url) => {
-      describe(`Отрисован корректно`, () => {
+      describe(`отрисован корректно`, () => {
         it(`на странице ${url}`, async function () {
           await this.browser.url(url).assertView('fileViewer_' + fileName, '.FileViewer')
         })
