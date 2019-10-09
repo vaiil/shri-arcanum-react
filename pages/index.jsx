@@ -6,9 +6,11 @@ const Home = () => (
   <Layout title='Index page'/>
 )
 
-Home.getInitialProps = async ({ reduxStore }) => {
+Home.getInitialProps = async ({ reduxStore, req }) => {
   const { dispatch } = reduxStore
-  await dispatch(fetchRepos())
+  if (req) {
+    await dispatch(fetchRepos())
+  }
 }
 
 export default withRedux(Home)

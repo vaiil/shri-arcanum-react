@@ -16,9 +16,11 @@ const Repo = ({ repoName }) => {
   )
 }
 
-Repo.getInitialProps = async ({ reduxStore, query: { repoName } }) => {
+Repo.getInitialProps = async ({ reduxStore, query: { repoName }, req }) => {
   const { dispatch } = reduxStore
-  await dispatch(fetchRepos())
+  if (req) {
+    await dispatch(fetchRepos())
+  }
   await dispatch(selectRepo(repoName))
   await dispatch(fetchTree({ repoName: repoName }))
 
