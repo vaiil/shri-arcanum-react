@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux'
 import { Table } from 'components/Base/Table'
+import { cnTree } from './index'
 import TreeTableRow from './-TableRow/Tree-TableRow'
 import TreeTableHead from './-TableHead/Tree-TableHead'
 
@@ -10,8 +11,7 @@ export default function Tree () {
   const error = treeState.error
 
   return (
-
-    <div>
+    <div className={cnTree()}>
       {error ? error :
         <Table>
           <TreeTableHead/>
