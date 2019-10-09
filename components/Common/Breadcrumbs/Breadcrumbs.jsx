@@ -1,7 +1,6 @@
 import { cnBreadcrumbs } from './index'
 import './Breadcrumbs.css'
 import BreadcrumbsLink from './-Link/Breadcrumbs-Link'
-import BreadcrumbsSeparator from './-Separator/Breadcrumbs-Separator'
 import { withRouter } from 'next/router'
 
 const Breadcrumbs = ({ router: { query: { repoName, branch, path } } }) => {
@@ -23,7 +22,7 @@ const Breadcrumbs = ({ router: { query: { repoName, branch, path } } }) => {
     links.push(...path.split('/').map(dir => {
       dirPath += '/' + dir
       return {
-        href: `/repos/[repoName]/tree/[branch]/[path*]`,
+        href: `/repos/[repoName]/tree/[branch]/[path...]`,
         as: `/repos/${repoName}/tree/${branch}${dirPath}`,
         children: dir
       }
@@ -35,7 +34,7 @@ const Breadcrumbs = ({ router: { query: { repoName, branch, path } } }) => {
   return (
     <div className={cnBreadcrumbs()}>
       {
-        links.map((link, i) => (
+        links.map((link) => (
           <BreadcrumbsLink key={link.as} {...link} />
         ))
       }

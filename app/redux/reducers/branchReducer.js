@@ -2,8 +2,8 @@ import { GET_BRANCHES_FAILURE, GET_BRANCHES_REQUEST, GET_BRANCHES_SUCCESS, SELEC
 
 export default (state = [], action) => {
   switch (action.type) {
-    case GET_BRANCHES_SUCCESS:
-      return { repos: action.branches, current: null }
+    // case GET_BRANCHES_SUCCESS:
+    //   return { repos: action.branches, current: null }
     case SELECT_BRANCH:
       return { ...state, current: action.branch }
     default:

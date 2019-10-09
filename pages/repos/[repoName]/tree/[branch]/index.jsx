@@ -1,6 +1,7 @@
 import { Layout } from 'components/Common/Layout'
 import { withRedux } from 'app/redux/withRedux'
 import { fetchRepos, selectRepo } from 'app/redux/actions/repo'
+import { selectBranch } from 'app/redux/actions/branch'
 import { fetchTree } from 'app/redux/actions/tree'
 
 import Breadcrumbs from 'components/Common/Breadcrumbs/Breadcrumbs'
@@ -20,8 +21,9 @@ BranchTree.getInitialProps = async ({ reduxStore, query: { repoName, branch }, r
   const { dispatch } = reduxStore
   if (req) {
     await dispatch(fetchRepos())
+    await dispatch(selectRepo(repoName))
+    await dispatch(selectBranch(branch))
   }
-  await dispatch(selectRepo(repoName))
   await dispatch(fetchTree({ repoName, branch }))
 
   return { repoName }
