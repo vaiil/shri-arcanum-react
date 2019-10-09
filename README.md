@@ -13,10 +13,11 @@ cd front
 yarn
 echo 'API_URL=http://localhost:3007' > .env
 yarn build
-yarn start -- --port 3008 
+yarn start --port 3008 &
+node_modules/.bin/hermione
 ``` 
 
-__Важно:__ Процесс сервера запустится в фоне, не забудьте его вынуть (`fg`) и прикончить.
+__Важно:__ Процесс api-сервера и next-сервера запустятся в фоне, не забудьте их вынуть (`fg`) и прикончить.
 
 ## Замечания по тестам
 Есть некоторые баги, которые пока не смог поправить. Специально для них есть ряд тестов:
@@ -44,7 +45,7 @@ cd front
 yarn --production
 echo 'API_URL=http://localhost:3007' > .env
 yarn build
-yarn start -- --port 3008 
+yarn start --port 3008 
 ``` 
 
 И откройте http://localhost:3008/repos/front
