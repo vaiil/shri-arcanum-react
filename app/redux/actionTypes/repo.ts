@@ -11,7 +11,7 @@ export const SELECT_REPO = 'SELECT_REPO'
 
 export interface SelectRepoAction {
   type: typeof SELECT_REPO,
-  repo: Repo
+  repo: Repo | null
 }
 
 export interface GetReposRequestAction {

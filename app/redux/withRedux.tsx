@@ -10,7 +10,7 @@ interface withRedux {
   reduxStore: Store
 }
 
-interface NextPageReduxContext extends withRedux, NextPageContext {
+export interface NextPageReduxContext extends withRedux, NextPageContext {
 
 }
 

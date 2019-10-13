@@ -1,15 +1,15 @@
-import { createStore, applyMiddleware, combineReducers, Store } from 'redux'
+import { createStore, applyMiddleware, combineReducers, Store, Action } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import repoReducer from './reducers/repoReducer'
 import treeReducer from './reducers/treeReducer'
 import branchReducer from './reducers/branchReducer'
-import thunk from 'redux-thunk'
-import { State } from './@types/state'
+import thunk, {ThunkDispatch} from 'redux-thunk'
+import { BaseState, State } from './@types/state'
 
-export const initializeStore = (preloadedState: State) : Store => {
+export const initializeStore = (preloadedState: State) => {
   return createStore(
     combineReducers({ repo: repoReducer, tree: treeReducer, branch: branchReducer }),
     preloadedState,
-    composeWithDevTools(applyMiddleware(thunk))
+    composeWithDevTools(applyMiddleware<ThunkDispatch<BaseState, null, Action>>(thunk))
   )
 }
