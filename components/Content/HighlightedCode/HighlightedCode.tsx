@@ -1,7 +1,8 @@
-import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight'
+const SyntaxHighlighter = require('react-syntax-highlighter/dist/cjs/default-highlight')
 import './HighlightedCode.css'
 import { cnHighlightedCode, HighlightedCodeProps } from './index'
-import style from 'react-syntax-highlighter/dist/esm/styles/hljs/github-gist'
+
+const style = require('react-syntax-highlighter/dist/cjs/styles/hljs/github-gist')
 import { FC } from 'react'
 
 const HighlightedCode: FC<HighlightedCodeProps> = ({ code }) => (

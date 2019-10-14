@@ -1,14 +1,15 @@
 import { Layout } from 'components/Common/Layout'
-import { withRedux } from 'app/redux/withRedux'
+import { NextPageReduxContext, withRedux } from 'app/redux/withRedux'
 import { fetchRepos, selectRepo } from 'app/redux/actions/repo'
 import { fetchTree } from 'app/redux/actions/tree'
 
 import Breadcrumbs from '../../../components/Common/Breadcrumbs/Breadcrumbs'
 import Tree from '../../../components/Content/Tree/Tree'
-import { withRouter } from 'next/router'
 import { selectBranch } from '../../../app/redux/actions/branch'
+import { ParsedUrlQuery } from 'querystring'
+import { NextComponentType } from 'next'
 
-const Repo = ({ repoName }) => {
+const Repo : NextComponentType<NextPageReduxContext, {}, QueryProps> = ({ repoName }) => {
   return (
     <Layout title={repoName}>
       <Breadcrumbs/>
@@ -17,16 +18,25 @@ const Repo = ({ repoName }) => {
   )
 }
 
-Repo.getInitialProps = async ({ reduxStore, query: { repoName }, req }) => {
+interface QueryProps extends ParsedUrlQuery{
+  repoName: string
+}
+
+interface PageContext extends NextPageReduxContext {
+  query: QueryProps
+}
+
+
+Repo.getInitialProps = async ({ reduxStore, query: { repoName }, req }: PageContext) => {
   const { dispatch } = reduxStore
   if (req) {
     await dispatch(fetchRepos())
   }
   await dispatch(selectRepo(repoName))
   await dispatch(selectBranch('master'))
-  await dispatch(fetchTree({ repoName: repoName }))
+  await dispatch(fetchTree({ repoName }))
 
   return { repoName }
 }
 
-export default withRouter(withRedux(Repo))
+export default withRedux(Repo)

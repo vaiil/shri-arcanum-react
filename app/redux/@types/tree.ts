@@ -12,8 +12,8 @@ export type Tree = Array<TreeObject>
 
 export interface TreeObjectRequest {
   repoName: string,
-  path: string,
-  branch: string
+  path?: string,
+  branch?: string
 }
 
 export interface TreeState {
