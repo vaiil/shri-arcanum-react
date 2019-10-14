@@ -4,7 +4,7 @@ import { cnTree } from './index'
 import TreeTableRow from './-TableRow/Tree-TableRow'
 import TreeTableHead from './-TableHead/Tree-TableHead'
 import { FC } from 'react'
-import { BaseState } from '../../../app/redux/@types/state'
+import { BaseState } from '../../../app/redux/@types/base'
 
 const Tree: FC = () => {
   const treeState = useSelector((state: BaseState) => state.tree)

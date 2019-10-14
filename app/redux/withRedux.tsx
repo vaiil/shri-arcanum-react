@@ -2,12 +2,14 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { initializeStore } from './store'
 import App from 'next/app'
-import { State } from './@types/state'
-import { Store } from 'redux'
+import { BaseState } from './@types/base'
+import { Action, AnyAction, Store } from 'redux'
 import { NextPageContext } from 'next'
+import { ThunkDispatch } from 'redux-thunk'
+
 
 interface withRedux {
-  reduxStore: Store
+  reduxStore: Store<BaseState, AnyAction> & Store<BaseState & {}, AnyAction> & { dispatch: ThunkDispatch<BaseState, null, Action> }
 }
 
 export interface NextPageReduxContext extends withRedux, NextPageContext {
@@ -15,7 +17,7 @@ export interface NextPageReduxContext extends withRedux, NextPageContext {
 }
 
 interface withReduxProps {
-  initialReduxState: State
+  initialReduxState: BaseState
 }
 
 export const withRedux = (PageComponent: any, { ssr = true } = {}) => {
@@ -72,7 +74,7 @@ export const withRedux = (PageComponent: any, { ssr = true } = {}) => {
 }
 
 let reduxStore: Store
-const getOrInitializeStore = (initialState?: State) => {
+const getOrInitializeStore = (initialState?: BaseState) => {
   // Always make a new store if server, otherwise state is shared between requests
   if (typeof window === 'undefined') {
     return initializeStore(initialState)

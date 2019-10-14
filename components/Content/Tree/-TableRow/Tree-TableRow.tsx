@@ -9,7 +9,7 @@ import { cnText } from 'components/Base/Text'
 import { cnIconPlus } from '../../../Base/IconPlus'
 import { cnIconPlusIcon } from '../../../Base/IconPlus/-Icon'
 import IconPlusBlock from '../../../Base/IconPlus/-Block/IconPlus-Block'
-import { BaseState } from '../../../../app/redux/@types/state'
+import { BaseState } from '../../../../app/redux/@types/base'
 import { TreeObject } from '../../../../app/redux/@types/tree'
 import { FC } from 'react'
 

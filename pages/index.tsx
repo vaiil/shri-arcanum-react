@@ -9,7 +9,6 @@ const Home = () => (
 Home.getInitialProps = async ({ reduxStore, req }: NextPageReduxContext) => {
   const { dispatch } = reduxStore
   if (req) {
-    // @ts-ignore
     await dispatch(fetchRepos())
   }
   await dispatch(selectRepo(null))

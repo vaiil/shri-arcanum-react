@@ -7,12 +7,10 @@ import {
   GetReposFailureAction,
   GetReposRequestAction,
   GetReposSuccessAction,
-  SelectRepoAction
+  SelectRepoAction, FetchRepos
 } from '../actionTypes/repo'
 import { baseApiUrl } from '../../api/urls'
-import { ThunkAction, ThunkDispatch } from 'redux-thunk'
-import { Action, AnyAction } from 'redux'
-import { Repo, Repos, RepoState } from '../@types/repo'
+import { Repo, Repos } from '../@types/repo'
 
 function requestRepos(): GetReposRequestAction {
   return {
@@ -41,7 +39,7 @@ export function selectRepo(repo: Repo | null): SelectRepoAction {
   }
 }
 
-export const fetchRepos = (): ThunkAction<void, RepoState, null, GetReposSuccessAction | GetReposFailureAction | GetReposRequestAction> => {
+export const fetchRepos = (): FetchRepos => {
   return function(dispatch) {
 
     dispatch(requestRepos())

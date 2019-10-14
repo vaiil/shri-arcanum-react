@@ -9,7 +9,7 @@ import { IconPlus } from 'components/Base/IconPlus'
 import { IconPlusIcon } from '../../Base/IconPlus/-Icon'
 import IconPlusBlock from 'components/Base/IconPlus/-Block/IconPlus-Block'
 import './RepoSelect.css'
-import { BaseState } from '../../../app/redux/@types/state'
+import { BaseState } from '../../../app/redux/@types/base'
 
 const RepoSelect: FC = () => {
   const repoState = useSelector((state: BaseState) => state.repo)

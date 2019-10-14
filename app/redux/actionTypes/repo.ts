@@ -1,4 +1,5 @@
-import { Repo, Repos } from '../@types/repo'
+import { Repo, Repos, RepoState } from '../@types/repo'
+import { ThunkAction } from 'redux-thunk'
 
 export const GET_REPOS_REQUEST = 'GET_REPOS_REQUEST'
 
@@ -27,5 +28,7 @@ export interface GetReposFailureAction {
   type: typeof GET_REPOS_FAILURE,
   reason: string
 }
+
+export type FetchRepos = ThunkAction<Promise<void>, { repo: RepoState }, null, GetReposSuccessAction | GetReposFailureAction | GetReposRequestAction>
 
 export type RepoActions = SelectRepoAction | GetReposRequestAction | GetReposSuccessAction | GetReposFailureAction
