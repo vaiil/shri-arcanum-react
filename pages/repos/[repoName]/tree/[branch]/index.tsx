@@ -6,8 +6,8 @@ import { fetchTree } from 'app/redux/actions/tree'
 
 import Breadcrumbs from 'components/Common/Breadcrumbs/Breadcrumbs'
 import Tree from 'components/Content/Tree/Tree'
-import { withRouter } from 'next/router'
 import { ParsedUrlQuery } from 'querystring'
+import { NextComponentType } from 'next'
 
 
 interface QueryProps extends ParsedUrlQuery {
@@ -19,7 +19,12 @@ interface PageContext extends NextPageReduxContext {
   query: QueryProps
 }
 
-const BranchTree = ({ repoName }: QueryProps) => {
+interface PageProps {
+  repoName: string
+}
+
+
+const BranchTree : NextComponentType<PageContext, {}, PageProps> = ({ repoName }) => {
   return (
     <Layout title={repoName}>
       <Breadcrumbs/>
@@ -28,7 +33,7 @@ const BranchTree = ({ repoName }: QueryProps) => {
   )
 }
 
-BranchTree.getInitialProps = async ({ reduxStore, query: { repoName, branch }, req }: PageContext) => {
+BranchTree.getInitialProps = async ({ reduxStore, query: { repoName, branch }, req }) => {
   const { dispatch } = reduxStore
   if (req) {
     await dispatch(fetchRepos())

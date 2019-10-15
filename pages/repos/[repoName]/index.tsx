@@ -9,14 +9,6 @@ import { selectBranch } from '../../../app/redux/actions/branch'
 import { ParsedUrlQuery } from 'querystring'
 import { NextComponentType } from 'next'
 
-const Repo : NextComponentType<NextPageReduxContext, {}, QueryProps> = ({ repoName }) => {
-  return (
-    <Layout title={repoName}>
-      <Breadcrumbs/>
-      <Tree/>
-    </Layout>
-  )
-}
 
 interface QueryProps extends ParsedUrlQuery{
   repoName: string
@@ -26,8 +18,21 @@ interface PageContext extends NextPageReduxContext {
   query: QueryProps
 }
 
+interface PageProps {
+  repoName: string
+}
 
-Repo.getInitialProps = async ({ reduxStore, query: { repoName }, req }: PageContext) => {
+const Repo : NextComponentType<PageContext, {}, PageProps> = ({ repoName }) => {
+  return (
+    <Layout title={repoName}>
+      <Breadcrumbs/>
+      <Tree/>
+    </Layout>
+  )
+}
+
+
+Repo.getInitialProps = async ({ reduxStore, query: { repoName }, req }) => {
   const { dispatch } = reduxStore
   if (req) {
     await dispatch(fetchRepos())
