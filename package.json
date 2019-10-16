@@ -28,7 +28,15 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "@types/node": "^12.7.12",
+    "@types/react": "^16.9.5",
+    "@types/react-dom": "^16.9.1",
+    "@types/react-redux": "^7.1.4",
+    "@types/react-syntax-highlighter": "^11.0.1",
+    "@types/redux": "^3.6.0",
+    "@types/redux-thunk": "^2.1.0",
     "hermione": "^2.12.6",
-    "html-reporter": "^5.0.0"
+    "html-reporter": "^5.0.0",
+    "typescript": "^3.6.4"
   }
 }
