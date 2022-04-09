@@ -15,7 +15,7 @@
     "dotenv": "^8.1.0",
     "dotenv-webpack": "^1.7.0",
     "isomorphic-unfetch": "^3.0.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "next": "https://github.com/vaiil/next-js-catch-all.git",
     "next-fonts": "^0.19.0",
     "pretty-bytes": "^5.3.0",
